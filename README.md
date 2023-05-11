@@ -104,6 +104,16 @@ We also graph the ROC Curve for this model as well.
 * In this case, the F1 score of 0.85 suggests that the model achieves a good balance between precision and recall, taking into account both false positives and false negatives.
 * With an accuracy of 0.95, our model correctly predicts the COVID-19 and non-COVID-19 cases from the lung CAT scans 95% of the time.
 
+### Optimized Vs. Lite Model
+
+Finally, we converted our optimized (best) model to a Tensorflow Lite model, which should be able to be run on edge devices. We note these results below. 
+
+![Optimized vs Lite Comparison](./assets/lite-compare.png)
+
+* We note that there are two comparisons being done here - one with a batch of 32 images as well as just a single image. This is because our optimized model can accept batches of images as a single input while the lite model can only accept a single image. As such, we have compared the performance of both batched input as well as single image input. 
+* We note that the resulting accuracy is the same across both models. 
+* We note that while the optimized modded took much more time, the Lite mode used much less resources, which is what we expect to see. For running on edge devices that have few resources available, resource constraints are key for us to consider. As such, for both instances, the memory used by the Lite model is nearly zero, to the extent that we could not measure the memory usage. This bodes a good result but may also be due to the way that we are measuring the model performance. 
+
 ## Contributions
 
 This is an open-source project. We welcome contributions, ideas, and suggestions to improve the model's effectiveness and usability. Please follow these simple rules for making contributions effectively.
