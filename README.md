@@ -1,4 +1,4 @@
-# Covid-19 Detection with Pruned CNN and TensorFlow Lite
+# Covid-19 Detection with Tuned CNN and TensorFlow Lite
 
 Predicting the presence of COVID-19 from CAT Scans. Completed as a part of NYU's Advanced Machine Learning Course.
 
